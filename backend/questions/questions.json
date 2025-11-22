@@ -1,0 +1,1202 @@
+{
+  "q1": {
+    "question": "Which international organization was awarded the Nobel Peace Prize in 2020 for its efforts to combat hunger?",
+    "options": {
+      "A": "UNICEF",
+      "B": "World Food Programme",
+      "C": "Red Cross",
+      "D": "WHO"
+    },
+    "correct": "B",
+    "section": "GK",
+    "difficulty": "medium-high"
+  },
+  "q2": {
+    "question": "The 'Indus Waters Treaty' was signed in 1960 between India and which other country?",
+    "options": {
+      "A": "China",
+      "B": "Bangladesh",
+      "C": "Pakistan",
+      "D": "Nepal"
+    },
+    "correct": "C",
+    "section": "GK",
+    "difficulty": "medium-high"
+  },
+  "q3": {
+    "question": "Which constitutional amendment in Pakistan introduced the 18th Amendment that devolved significant powers to provinces?",
+    "options": {
+      "A": "17th Amendment",
+      "B": "18th Amendment",
+      "C": "19th Amendment",
+      "D": "20th Amendment"
+    },
+    "correct": "B",
+    "section": "GK",
+    "difficulty": "high"
+  },
+  "q4": {
+    "question": "The 'Comprehensive Nuclear-Test-Ban Treaty' (CTBT) was opened for signature in which year?",
+    "options": {
+      "A": "1992",
+      "B": "1994",
+      "C": "1996",
+      "D": "1998"
+    },
+    "correct": "C",
+    "section": "GK",
+    "difficulty": "high"
+  },
+  "q5": {
+    "question": "Which economist is known for the concept of 'Creative Destruction' in capitalism?",
+    "options": {
+      "A": "Adam Smith",
+      "B": "John Maynard Keynes",
+      "C": "Joseph Schumpeter",
+      "D": "Karl Marx"
+    },
+    "correct": "C",
+    "section": "GK",
+    "difficulty": "high"
+  },
+  "q6": {
+    "question": "The 'Silk Road Economic Belt' is a development strategy proposed by which country?",
+    "options": {
+      "A": "Russia",
+      "B": "India",
+      "C": "China",
+      "D": "Japan"
+    },
+    "correct": "C",
+    "section": "GK",
+    "difficulty": "medium-high"
+  },
+  "q7": {
+    "question": "Which country became the first in the world to grant citizenship to a robot named Sophia?",
+    "options": {
+      "A": "Japan",
+      "B": "United States",
+      "C": "Saudi Arabia",
+      "D": "South Korea"
+    },
+    "correct": "C",
+    "section": "GK",
+    "difficulty": "medium-high"
+  },
+  "q8": {
+    "question": "The 'Quad' strategic dialogue includes USA, Japan, Australia, and which other country?",
+    "options": {
+      "A": "India",
+      "B": "South Korea",
+      "C": "Indonesia",
+      "D": "Philippines"
+    },
+    "correct": "A",
+    "section": "GK",
+    "difficulty": "high"
+  },
+  "q9": {
+    "question": "Which Pakistani scientist is known for contributions to theoretical physics and won the Nobel Prize in Physics?",
+    "options": {
+      "A": "Abdul Qadeer Khan",
+      "B": "Abdus Salam",
+      "C": "Salimuzzaman Siddiqui",
+      "D": "Atta-ur-Rahman"
+    },
+    "correct": "B",
+    "section": "GK",
+    "difficulty": "medium-high"
+  },
+  "q10": {
+    "question": "The Paris Climate Agreement was adopted in which year?",
+    "options": {
+      "A": "2012",
+      "B": "2015",
+      "C": "2016",
+      "D": "2018"
+    },
+    "correct": "B",
+    "section": "GK",
+    "difficulty": "medium-high"
+  },
+  "q11": {
+    "question": "Which lake is the largest by surface area in the world?",
+    "options": {
+      "A": "Caspian Sea",
+      "B": "Lake Superior",
+      "C": "Lake Victoria",
+      "D": "Lake Baikal"
+    },
+    "correct": "A",
+    "section": "GK",
+    "difficulty": "medium-high"
+  },
+  "q12": {
+    "question": "The 'Green Revolution' in agriculture was pioneered by which scientist?",
+    "options": {
+      "A": "Norman Borlaug",
+      "B": "Gregor Mendel",
+      "C": "Louis Pasteur",
+      "D": "Charles Darwin"
+    },
+    "correct": "A",
+    "section": "GK",
+    "difficulty": "high"
+  },
+  "q13": {
+    "question": "Which international court is located in The Hague, Netherlands?",
+    "options": {
+      "A": "International Criminal Court",
+      "B": "World Trade Organization Tribunal",
+      "C": "European Court of Justice",
+      "D": "International Labour Court"
+    },
+    "correct": "A",
+    "section": "GK",
+    "difficulty": "medium-high"
+  },
+  "q14": {
+    "question": "The concept of 'Blockchain' was first implemented in which cryptocurrency?",
+    "options": {
+      "A": "Ethereum",
+      "B": "Bitcoin",
+      "C": "Litecoin",
+      "D": "Ripple"
+    },
+    "correct": "B",
+    "section": "GK",
+    "difficulty": "medium-high"
+  },
+  "q15": {
+    "question": "Which organization publishes the 'World Development Report'?",
+    "options": {
+      "A": "International Monetary Fund",
+      "B": "World Bank",
+      "C": "United Nations",
+      "D": "World Economic Forum"
+    },
+    "correct": "B",
+    "section": "GK",
+    "difficulty": "high"
+  },
+  "q16": {
+    "question": "The 'Magna Carta' was signed in which year?",
+    "options": {
+      "A": "1215",
+      "B": "1315",
+      "C": "1415",
+      "D": "1515"
+    },
+    "correct": "A",
+    "section": "GK",
+    "difficulty": "high"
+  },
+  "q17": {
+    "question": "Which country has the largest reserves of rare earth elements?",
+    "options": {
+      "A": "Australia",
+      "B": "United States",
+      "C": "China",
+      "D": "Brazil"
+    },
+    "correct": "C",
+    "section": "GK",
+    "difficulty": "high"
+  },
+  "q18": {
+    "question": "The 'Wassenaar Arrangement' deals with export controls on which items?",
+    "options": {
+      "A": "Nuclear materials",
+      "B": "Conventional arms and dual-use goods",
+      "C": "Chemical weapons",
+      "D": "Biological agents"
+    },
+    "correct": "B",
+    "section": "GK",
+    "difficulty": "high"
+  },
+  "q19": {
+    "question": "Which philosopher is known for the concept of 'Categorical Imperative'?",
+    "options": {
+      "A": "Friedrich Nietzsche",
+      "B": "Immanuel Kant",
+      "C": "Jean-Jacques Rousseau",
+      "D": "John Stuart Mill"
+    },
+    "correct": "B",
+    "section": "GK",
+    "difficulty": "high"
+  },
+  "q20": {
+    "question": "The 'Human Development Index' (HDI) is published by which organization?",
+    "options": {
+      "A": "World Bank",
+      "B": "UNDP",
+      "C": "WHO",
+      "D": "IMF"
+    },
+    "correct": "B",
+    "section": "GK",
+    "difficulty": "medium-high"
+  },
+  "q21": {
+    "question": "Which treaty established the European Union?",
+    "options": {
+      "A": "Treaty of Rome",
+      "B": "Treaty of Versailles",
+      "C": "Treaty of Maastricht",
+      "D": "Treaty of Lisbon"
+    },
+    "correct": "C",
+    "section": "GK",
+    "difficulty": "high"
+  },
+  "q22": {
+    "question": "The 'Kyoto Protocol' primarily deals with which environmental issue?",
+    "options": {
+      "A": "Ozone depletion",
+      "B": "Climate change and greenhouse gases",
+      "C": "Biodiversity loss",
+      "D": "Ocean pollution"
+    },
+    "correct": "B",
+    "section": "GK",
+    "difficulty": "medium-high"
+  },
+  "q23": {
+    "question": "Which Pakistani city is known as the 'City of Gardens'?",
+    "options": {
+      "A": "Islamabad",
+      "B": "Lahore",
+      "C": "Karachi",
+      "D": "Peshawar"
+    },
+    "correct": "B",
+    "section": "GK",
+    "difficulty": "medium-high"
+  },
+  "q24": {
+    "question": "The 'G20' was founded in which year?",
+    "options": {
+      "A": "1995",
+      "B": "1999",
+      "C": "2001",
+      "D": "2005"
+    },
+    "correct": "B",
+    "section": "GK",
+    "difficulty": "high"
+  },
+  "q25": {
+    "question": "Which element is named after the planet Uranus?",
+    "options": {
+      "A": "Uranium",
+      "B": "Neptunium",
+      "C": "Plutonium",
+      "D": "Helium"
+    },
+    "correct": "A",
+    "section": "GK",
+    "difficulty": "medium-high"
+  },
+  "q26": {
+    "question": "The 'Non-Aligned Movement' was founded in which year?",
+    "options": {
+      "A": "1955",
+      "B": "1961",
+      "C": "1965",
+      "D": "1970"
+    },
+    "correct": "B",
+    "section": "GK",
+    "difficulty": "high"
+  },
+  "q27": {
+    "question": "Which space agency successfully landed the 'Perseverance' rover on Mars in 2021?",
+    "options": {
+      "A": "ESA",
+      "B": "Roscosmos",
+      "C": "NASA",
+      "D": "ISRO"
+    },
+    "correct": "C",
+    "section": "GK",
+    "difficulty": "medium-high"
+  },
+  "q28": {
+    "question": "The 'BRICS' group of nations includes Brazil, Russia, India, China, and which other country?",
+    "options": {
+      "A": "South Korea",
+      "B": "South Africa",
+      "C": "Saudi Arabia",
+      "D": "Spain"
+    },
+    "correct": "B",
+    "section": "GK",
+    "difficulty": "medium-high"
+  },
+  "q29": {
+    "question": "Which Pakistani dam is the largest earth-filled dam in the world?",
+    "options": {
+      "A": "Mangla Dam",
+      "B": "Tarbela Dam",
+      "C": "Warsak Dam",
+      "D": "Mirani Dam"
+    },
+    "correct": "B",
+    "section": "GK",
+    "difficulty": "high"
+  },
+  "q30": {
+    "question": "The 'Turing Test' was proposed to test a machine's ability to exhibit what?",
+    "options": {
+      "A": "Computational speed",
+      "B": "Intelligent behavior equivalent to humans",
+      "C": "Memory capacity",
+      "D": "Energy efficiency"
+    },
+    "correct": "B",
+    "section": "GK",
+    "difficulty": "high"
+  },
+  "q31": {
+    "question": "If the roots of the quadratic equation x² - 5x + k = 0 are in the ratio 2:3, what is the value of k?",
+    "options": {
+      "A": "4",
+      "B": "5",
+      "C": "6",
+      "D": "8"
+    },
+    "correct": "C",
+    "section": "Mathematics",
+    "difficulty": "high"
+  },
+  "q32": {
+    "question": "What is the value of lim(x→0) [(sin(3x))/(2x)]?",
+    "options": {
+      "A": "1/2",
+      "B": "2/3",
+      "C": "3/2",
+      "D": "2"
+    },
+    "correct": "C",
+    "section": "Mathematics",
+    "difficulty": "high"
+  },
+  "q33": {
+    "question": "The derivative of f(x) = ln(x² + 1) is:",
+    "options": {
+      "A": "1/(x² + 1)",
+      "B": "2x/(x² + 1)",
+      "C": "2x",
+      "D": "x/(x² + 1)"
+    },
+    "correct": "B",
+    "section": "Mathematics",
+    "difficulty": "medium-high"
+  },
+  "q34": {
+    "question": "If matrix A is 3×2 and matrix B is 2×4, what is the order of the product matrix AB?",
+    "options": {
+      "A": "2×2",
+      "B": "3×4",
+      "C": "2×3",
+      "D": "4×3"
+    },
+    "correct": "B",
+    "section": "Mathematics",
+    "difficulty": "medium-high"
+  },
+  "q35": {
+    "question": "The integral ∫(1/(1+x²))dx equals:",
+    "options": {
+      "A": "ln(1+x²) + C",
+      "B": "arctan(x) + C",
+      "C": "arcsin(x) + C",
+      "D": "1/(2x) + C"
+    },
+    "correct": "B",
+    "section": "Mathematics",
+    "difficulty": "medium-high"
+  },
+  "q36": {
+    "question": "If z = x + iy is a complex number, what is |z|²?",
+    "options": {
+      "A": "x² + y²",
+      "B": "x² - y²",
+      "C": "(x + y)²",
+      "D": "x + y"
+    },
+    "correct": "A",
+    "section": "Mathematics",
+    "difficulty": "medium-high"
+  },
+  "q37": {
+    "question": "The sum of the infinite geometric series 1 + 1/3 + 1/9 + 1/27 + ... is:",
+    "options": {
+      "A": "3/2",
+      "B": "2",
+      "C": "3",
+      "D": "Infinity"
+    },
+    "correct": "A",
+    "section": "Mathematics",
+    "difficulty": "high"
+  },
+  "q38": {
+    "question": "For a function to be continuous at x = a, which condition must be satisfied?",
+    "options": {
+      "A": "f(a) exists only",
+      "B": "lim(x→a) f(x) exists only",
+      "C": "f(a) exists and lim(x→a) f(x) = f(a)",
+      "D": "f'(a) exists"
+    },
+    "correct": "C",
+    "section": "Mathematics",
+    "difficulty": "medium-high"
+  },
+  "q39": {
+    "question": "The eigenvalues of the matrix [[2, 1], [1, 2]] are:",
+    "options": {
+      "A": "1 and 3",
+      "B": "0 and 4",
+      "C": "2 and 2",
+      "D": "-1 and 5"
+    },
+    "correct": "A",
+    "section": "Mathematics",
+    "difficulty": "high"
+  },
+  "q40": {
+    "question": "What is the Taylor series expansion of e^x around x = 0?",
+    "options": {
+      "A": "1 + x + x²/2! + x³/3! + ...",
+      "B": "1 - x + x²/2! - x³/3! + ...",
+      "C": "x + x²/2 + x³/3 + ...",
+      "D": "1 + x + x² + x³ + ..."
+    },
+    "correct": "A",
+    "section": "Mathematics",
+    "difficulty": "high"
+  },
+  "q41": {
+    "question": "The gradient vector ∇f of a scalar field f(x,y,z) points in the direction of:",
+    "options": {
+      "A": "Maximum decrease of f",
+      "B": "Maximum increase of f",
+      "C": "Tangent to level surface",
+      "D": "Zero change in f"
+    },
+    "correct": "B",
+    "section": "Mathematics",
+    "difficulty": "high"
+  },
+  "q42": {
+    "question": "If P(A) = 0.6, P(B) = 0.4, and P(A∩B) = 0.2, what is P(A∪B)?",
+    "options": {
+      "A": "0.6",
+      "B": "0.7",
+      "C": "0.8",
+      "D": "1.0"
+    },
+    "correct": "C",
+    "section": "Mathematics",
+    "difficulty": "medium-high"
+  },
+  "q43": {
+    "question": "The Laplace transform of f(t) = e^(at) is:",
+    "options": {
+      "A": "1/(s-a) for s > a",
+      "B": "1/(s+a) for s > -a",
+      "C": "s/(s-a)",
+      "D": "a/(s-a)"
+    },
+    "correct": "A",
+    "section": "Mathematics",
+    "difficulty": "high"
+  },
+  "q44": {
+    "question": "For what value of k does the system of equations x + y = 5 and 2x + 2y = k have infinitely many solutions?",
+    "options": {
+      "A": "5",
+      "B": "10",
+      "C": "15",
+      "D": "20"
+    },
+    "correct": "B",
+    "section": "Mathematics",
+    "difficulty": "medium-high"
+  },
+  "q45": {
+    "question": "The determinant of a 3×3 matrix [[1,2,3],[4,5,6],[7,8,9]] is:",
+    "options": {
+      "A": "0",
+      "B": "1",
+      "C": "-1",
+      "D": "45"
+    },
+    "correct": "A",
+    "section": "Mathematics",
+    "difficulty": "medium-high"
+  },
+  "q46": {
+    "question": "What is the radius of convergence of the power series Σ(x^n/n!) from n=0 to ∞?",
+    "options": {
+      "A": "0",
+      "B": "1",
+      "C": "e",
+      "D": "Infinity"
+    },
+    "correct": "D",
+    "section": "Mathematics",
+    "difficulty": "high"
+  },
+  "q47": {
+    "question": "If f(x) = x³ - 3x² + 2, at what value of x does f(x) have a local maximum?",
+    "options": {
+      "A": "x = 0",
+      "B": "x = 1",
+      "C": "x = 2",
+      "D": "x = 3"
+    },
+    "correct": "A",
+    "section": "Mathematics",
+    "difficulty": "high"
+  },
+  "q48": {
+    "question": "The partial derivative ∂z/∂x of z = x²y + y³ is:",
+    "options": {
+      "A": "2xy",
+      "B": "x² + 3y²",
+      "C": "2xy + y³",
+      "D": "x²y"
+    },
+    "correct": "A",
+    "section": "Mathematics",
+    "difficulty": "medium-high"
+  },
+  "q49": {
+    "question": "The area under the curve y = x² from x = 0 to x = 2 is:",
+    "options": {
+      "A": "4/3",
+      "B": "8/3",
+      "C": "4",
+      "D": "8"
+    },
+    "correct": "B",
+    "section": "Mathematics",
+    "difficulty": "medium-high"
+  },
+  "q50": {
+    "question": "In a normal distribution, approximately what percentage of data falls within one standard deviation of the mean?",
+    "options": {
+      "A": "50%",
+      "B": "68%",
+      "C": "95%",
+      "D": "99.7%"
+    },
+    "correct": "B",
+    "section": "Mathematics",
+    "difficulty": "medium-high"
+  },
+  "q51": {
+    "question": "In a three-phase balanced system, what is the phase difference between any two line voltages?",
+    "options": {
+      "A": "60 degrees",
+      "B": "90 degrees",
+      "C": "120 degrees",
+      "D": "180 degrees"
+    },
+    "correct": "C",
+    "section": "Electrical",
+    "difficulty": "medium-high"
+  },
+  "q52": {
+    "question": "The Thevenin equivalent circuit consists of a voltage source in series with:",
+    "options": {
+      "A": "An inductor",
+      "B": "A capacitor",
+      "C": "A resistance",
+      "D": "A current source"
+    },
+    "correct": "C",
+    "section": "Electrical",
+    "difficulty": "medium-high"
+  },
+  "q53": {
+    "question": "In AM modulation, if the carrier frequency is 1 MHz and the modulating signal is 5 kHz, what are the sideband frequencies?",
+    "options": {
+      "A": "995 kHz and 1005 kHz",
+      "B": "990 kHz and 1010 kHz",
+      "C": "1000 kHz and 1005 kHz",
+      "D": "995 kHz and 1000 kHz"
+    },
+    "correct": "A",
+    "section": "Electrical",
+    "difficulty": "high"
+  },
+  "q54": {
+    "question": "What is the Nyquist sampling rate for a signal with maximum frequency component of 10 kHz?",
+    "options": {
+      "A": "5 kHz",
+      "B": "10 kHz",
+      "C": "20 kHz",
+      "D": "40 kHz"
+    },
+    "correct": "C",
+    "section": "Electrical",
+    "difficulty": "medium-high"
+  },
+  "q55": {
+    "question": "In a synchronous generator, the frequency of generated voltage depends on:",
+    "options": {
+      "A": "Load current only",
+      "B": "Number of poles and speed",
+      "C": "Voltage magnitude only",
+      "D": "Power factor only"
+    },
+    "correct": "B",
+    "section": "Electrical",
+    "difficulty": "medium-high"
+  },
+  "q56": {
+    "question": "The skin effect in conductors causes:",
+    "options": {
+      "A": "Current to flow uniformly throughout the conductor",
+      "B": "Current to concentrate near the surface at high frequencies",
+      "C": "Voltage drop to increase linearly with frequency",
+      "D": "Inductance to decrease with frequency"
+    },
+    "correct": "B",
+    "section": "Electrical",
+    "difficulty": "high"
+  },
+  "q57": {
+    "question": "In a power system, what is the primary purpose of a circuit breaker?",
+    "options": {
+      "A": "To regulate voltage",
+      "B": "To interrupt fault currents",
+      "C": "To measure power",
+      "D": "To generate reactive power"
+    },
+    "correct": "B",
+    "section": "Electrical",
+    "difficulty": "medium-high"
+  },
+  "q58": {
+    "question": "The Z-transform is primarily used in the analysis of:",
+    "options": {
+      "A": "Continuous-time systems",
+      "B": "AC circuits",
+      "C": "Discrete-time systems",
+      "D": "Magnetic circuits"
+    },
+    "correct": "C",
+    "section": "Electrical",
+    "difficulty": "high"
+  },
+  "q59": {
+    "question": "In OFDM (Orthogonal Frequency Division Multiplexing), what mathematical operation is used for modulation?",
+    "options": {
+      "A": "Fast Fourier Transform",
+      "B": "Laplace Transform",
+      "C": "Z-Transform",
+      "D": "Hilbert Transform"
+    },
+    "correct": "A",
+    "section": "Electrical",
+    "difficulty": "high"
+  },
+  "q60": {
+    "question": "The propagation constant γ in a transmission line is equal to:",
+    "options": {
+      "A": "α + jβ",
+      "B": "R + jωL",
+      "C": "G + jωC",
+      "D": "Z₀/Y₀"
+    },
+    "correct": "A",
+    "section": "Electrical",
+    "difficulty": "high"
+  },
+  "q61": {
+    "question": "In a MOSFET, the threshold voltage VT is primarily determined by:",
+    "options": {
+      "A": "Drain-source voltage",
+      "B": "Gate oxide thickness and doping concentration",
+      "C": "Channel length only",
+      "D": "Drain current"
+    },
+    "correct": "B",
+    "section": "Electrical",
+    "difficulty": "high"
+  },
+  "q62": {
+    "question": "What is the main advantage of using Gray code in digital communication systems?",
+    "options": {
+      "A": "Higher data rate",
+      "B": "Lower power consumption",
+      "C": "Only one bit changes between consecutive code words",
+      "D": "Better error correction"
+    },
+    "correct": "C",
+    "section": "Electrical",
+    "difficulty": "high"
+  },
+  "q63": {
+    "question": "In a control system, the steady-state error for a Type 1 system with a step input is:",
+    "options": {
+      "A": "Zero",
+      "B": "Constant non-zero",
+      "C": "Infinity",
+      "D": "Depends on gain"
+    },
+    "correct": "A",
+    "section": "Electrical",
+    "difficulty": "high"
+  },
+  "q64": {
+    "question": "The Shannon-Hartley theorem gives the maximum capacity of a channel in terms of:",
+    "options": {
+      "A": "Voltage and current",
+      "B": "Bandwidth and signal-to-noise ratio",
+      "C": "Frequency and amplitude",
+      "D": "Phase and polarization"
+    },
+    "correct": "B",
+    "section": "Electrical",
+    "difficulty": "high"
+  },
+  "q65": {
+    "question": "In a balanced three-phase system, the line voltage magnitude is √3 times the phase voltage when connected in:",
+    "options": {
+      "A": "Star configuration",
+      "B": "Delta configuration",
+      "C": "Both configurations",
+      "D": "Neither configuration"
+    },
+    "correct": "A",
+    "section": "Electrical",
+    "difficulty": "medium-high"
+  },
+  "q66": {
+    "question": "The purpose of a guard band in frequency division multiplexing (FDM) is to:",
+    "options": {
+      "A": "Increase bandwidth efficiency",
+      "B": "Prevent adjacent channel interference",
+      "C": "Improve signal strength",
+      "D": "Reduce power consumption"
+    },
+    "correct": "B",
+    "section": "Electrical",
+    "difficulty": "medium-high"
+  },
+  "q67": {
+    "question": "In a BJT amplifier operating in active mode, which junctions are forward and reverse biased respectively?",
+    "options": {
+      "A": "Both forward biased",
+      "B": "Base-emitter forward, base-collector reverse",
+      "C": "Base-emitter reverse, base-collector forward",
+      "D": "Both reverse biased"
+    },
+    "correct": "B",
+    "section": "Electrical",
+    "difficulty": "medium-high"
+  },
+  "q68": {
+    "question": "The Bode plot of a system shows the magnitude and phase response as functions of:",
+    "options": {
+      "A": "Time",
+      "B": "Frequency (logarithmic scale)",
+      "C": "Voltage",
+      "D": "Current"
+    },
+    "correct": "B",
+    "section": "Electrical",
+    "difficulty": "medium-high"
+  },
+  "q69": {
+    "question": "In digital modulation, QPSK (Quadrature Phase Shift Keying) transmits how many bits per symbol?",
+    "options": {
+      "A": "1 bit",
+      "B": "2 bits",
+      "C": "3 bits",
+      "D": "4 bits"
+    },
+    "correct": "B",
+    "section": "Electrical",
+    "difficulty": "high"
+  },
+  "q70": {
+    "question": "The impulse response h(t) of an LTI system is related to its transfer function H(s) by:",
+    "options": {
+      "A": "Fourier Transform",
+      "B": "Inverse Laplace Transform",
+      "C": "Z-Transform",
+      "D": "Convolution"
+    },
+    "correct": "B",
+    "section": "Electrical",
+    "difficulty": "high"
+  },
+  "q71": {
+    "question": "What is the equivalent capacitance when two capacitors of 4μF and 6μF are connected in series?",
+    "options": {
+      "A": "2.4 μF",
+      "B": "5 μF",
+      "C": "10 μF",
+      "D": "24 μF"
+    },
+    "correct": "A",
+    "section": "Electrical",
+    "difficulty": "medium-high"
+  },
+  "q72": {
+    "question": "In fiber optic communication, what causes intermodal dispersion?",
+    "options": {
+      "A": "Different wavelengths of light",
+      "B": "Different propagation paths for different modes",
+      "C": "Attenuation in the fiber",
+      "D": "Reflection at fiber ends"
+    },
+    "correct": "B",
+    "section": "Electrical",
+    "difficulty": "high"
+  },
+  "q73": {
+    "question": "The Routh-Hurwitz criterion is used to determine:",
+    "options": {
+      "A": "System bandwidth",
+      "B": "System stability without solving characteristic equation",
+      "C": "Steady-state error",
+      "D": "System gain"
+    },
+    "correct": "B",
+    "section": "Electrical",
+    "difficulty": "high"
+  },
+  "q74": {
+    "question": "In a transformer, the regulation is a measure of:",
+    "options": {
+      "A": "Efficiency of the transformer",
+      "B": "Change in secondary voltage from no-load to full-load",
+      "C": "Core losses",
+      "D": "Magnetizing current"
+    },
+    "correct": "B",
+    "section": "Electrical",
+    "difficulty": "medium-high"
+  },
+  "q75": {
+    "question": "The constellation diagram in digital communication represents:",
+    "options": {
+      "A": "Time domain signal",
+      "B": "Frequency spectrum",
+      "C": "In-phase and quadrature components",
+      "D": "Impulse response"
+    },
+    "correct": "C",
+    "section": "Electrical",
+    "difficulty": "high"
+  },
+  "q76": {
+    "question": "What is the primary advantage of using delta modulation over PCM?",
+    "options": {
+      "A": "Higher signal-to-noise ratio",
+      "B": "Simpler implementation with lower bit rate",
+      "C": "Better frequency response",
+      "D": "No quantization noise"
+    },
+    "correct": "B",
+    "section": "Electrical",
+    "difficulty": "high"
+  },
+  "q77": {
+    "question": "In antenna theory, the radiation pattern represents:",
+    "options": {
+      "A": "Input impedance variation",
+      "B": "Power radiated as a function of direction",
+      "C": "Voltage standing wave ratio",
+      "D": "Bandwidth of the antenna"
+    },
+    "correct": "B",
+    "section": "Electrical",
+    "difficulty": "medium-high"
+  },
+  "q78": {
+    "question": "The Barkhausen criterion for oscillation requires that the loop gain must be:",
+    "options": {
+      "A": "Less than 1 at 0° phase shift",
+      "B": "Equal to 1 at 180° phase shift",
+      "C": "Greater than 1 at 90° phase shift",
+      "D": "Equal to 1 at 0° phase shift"
+    },
+    "correct": "D",
+    "section": "Electrical",
+    "difficulty": "high"
+  },
+  "q79": {
+    "question": "In a microwave system, what is the typical frequency range?",
+    "options": {
+      "A": "3 kHz to 30 kHz",
+      "B": "30 MHz to 300 MHz",
+      "C": "300 MHz to 300 GHz",
+      "D": "Above 300 GHz"
+    },
+    "correct": "C",
+    "section": "Electrical",
+    "difficulty": "medium-high"
+  },
+  "q80": {
+    "question": "The phenomenon of fading in wireless communication is primarily caused by:",
+    "options": {
+      "A": "Transmitter power variations",
+      "B": "Multipath propagation",
+      "C": "Receiver noise",
+      "D": "Antenna mismatch"
+    },
+    "correct": "B",
+    "section": "Electrical",
+    "difficulty": "high"
+  },
+  "q81": {
+    "question": "In a CDMA system, what allows multiple users to share the same frequency band simultaneously?",
+    "options": {
+      "A": "Time division",
+      "B": "Frequency hopping",
+      "C": "Unique orthogonal codes",
+      "D": "Polarization diversity"
+    },
+    "correct": "C",
+    "section": "Electrical",
+    "difficulty": "high"
+  },
+  "q82": {
+    "question": "The Q-factor of a resonant circuit is defined as:",
+    "options": {
+      "A": "Ratio of resistance to reactance",
+      "B": "Ratio of bandwidth to center frequency",
+      "C": "Ratio of reactance to resistance",
+      "D": "Product of resistance and capacitance"
+    },
+    "correct": "C",
+    "section": "Electrical",
+    "difficulty": "high"
+  },
+  "q83": {
+    "question": "In power electronics, PWM (Pulse Width Modulation) is primarily used for:",
+    "options": {
+      "A": "Frequency multiplication",
+      "B": "Voltage and current control",
+      "C": "Phase shifting",
+      "D": "Signal filtering"
+    },
+    "correct": "B",
+    "section": "Electrical",
+    "difficulty": "medium-high"
+  },
+  "q84": {
+    "question": "The cut-off frequency of a low-pass filter with R = 1kΩ and C = 1μF is approximately:",
+    "options": {
+      "A": "159 Hz",
+      "B": "1 kHz",
+      "C": "159 kHz",
+      "D": "1 MHz"
+    },
+    "correct": "A",
+    "section": "Electrical",
+    "difficulty": "high"
+  },
+  "q85": {
+    "question": "In satellite communication, what is the primary reason for using the C-band (4-8 GHz)?",
+    "options": {
+      "A": "Higher data rates",
+      "B": "Less atmospheric attenuation",
+      "C": "Smaller antenna size",
+      "D": "Lower power requirements"
+    },
+    "correct": "B",
+    "section": "Electrical",
+    "difficulty": "high"
+  },
+  "q86": {
+    "question": "The Hamming distance between two binary code words is defined as:",
+    "options": {
+      "A": "Number of bit positions in which they differ",
+      "B": "Sum of all bits in both words",
+      "C": "XOR of the two words",
+      "D": "Length of the code words"
+    },
+    "correct": "A",
+    "section": "Electrical",
+    "difficulty": "medium-high"
+  },
+  "q87": {
+    "question": "In an induction motor, the slip at no-load is approximately:",
+    "options": {
+      "A": "0%",
+      "B": "5%",
+      "C": "50%",
+      "D": "100%"
+    },
+    "correct": "A",
+    "section": "Electrical",
+    "difficulty": "medium-high"
+  },
+  "q88": {
+    "question": "The primary function of an equalizer in a communication receiver is to:",
+    "options": {
+      "A": "Amplify the received signal",
+      "B": "Compensate for channel distortion",
+      "C": "Remove noise",
+      "D": "Demodulate the signal"
+    },
+    "correct": "B",
+    "section": "Electrical",
+    "difficulty": "high"
+  },
+  "q89": {
+    "question": "In digital signal processing, aliasing occurs when:",
+    "options": {
+      "A": "Sampling rate is too high",
+      "B": "Sampling rate is below the Nyquist rate",
+      "C": "Signal is oversampled",
+      "D": "Filter order is too low"
+    },
+    "correct": "B",
+    "section": "Electrical",
+    "difficulty": "medium-high"
+  },
+  "q90": {
+    "question": "The Norton equivalent circuit consists of a current source in parallel with:",
+    "options": {
+      "A": "A voltage source",
+      "B": "An inductor",
+      "C": "A resistance",
+      "D": "A capacitor"
+    },
+    "correct": "C",
+    "section": "Electrical",
+    "difficulty": "medium-high"
+  },
+  "q91": {
+    "question": "In LTE (Long Term Evolution) networks, what multiple access technique is used in the uplink?",
+    "options": {
+      "A": "OFDMA",
+      "B": "SC-FDMA",
+      "C": "TDMA",
+      "D": "CDMA"
+    },
+    "correct": "B",
+    "section": "Electrical",
+    "difficulty": "high"
+  },
+  "q92": {
+    "question": "The maximum power transfer theorem states that maximum power is delivered when load impedance equals:",
+    "options": {
+      "A": "Source impedance",
+      "B": "Conjugate of source impedance",
+      "C": "Twice the source impedance",
+      "D": "Zero"
+    },
+    "correct": "B",
+    "section": "Electrical",
+    "difficulty": "high"
+  },
+  "q93": {
+    "question": "In a superheterodyne receiver, the purpose of the IF (Intermediate Frequency) stage is to:",
+    "options": {
+      "A": "Demodulate the signal",
+      "B": "Provide stable amplification at a fixed frequency",
+      "C": "Mix the signal with local oscillator",
+      "D": "Filter out noise"
+    },
+    "correct": "B",
+    "section": "Electrical",
+    "difficulty": "high"
+  },
+  "q94": {
+    "question": "The main advantage of using frequency modulation (FM) over amplitude modulation (AM) is:",
+    "options": {
+      "A": "Lower bandwidth requirement",
+      "B": "Simpler circuitry",
+      "C": "Better noise immunity",
+      "D": "Lower power consumption"
+    },
+    "correct": "C",
+    "section": "Electrical",
+    "difficulty": "medium-high"
+  },
+  "q95": {
+    "question": "In a PID controller, the integral action is used to eliminate:",
+    "options": {
+      "A": "Overshoot",
+      "B": "Steady-state error",
+      "C": "Rise time",
+      "D": "Settling time"
+    },
+    "correct": "B",
+    "section": "Electrical",
+    "difficulty": "high"
+  },
+  "q96": {
+    "question": "The characteristic impedance Z₀ of a transmission line depends on:",
+    "options": {
+      "A": "Length of the line only",
+      "B": "Frequency of operation only",
+      "C": "Inductance and capacitance per unit length",
+      "D": "Load impedance"
+    },
+    "correct": "C",
+    "section": "Electrical",
+    "difficulty": "high"
+  },
+  "q97": {
+    "question": "In cellular networks, what is the primary purpose of frequency reuse?",
+    "options": {
+      "A": "Increase data rate",
+      "B": "Improve signal quality",
+      "C": "Increase system capacity",
+      "D": "Reduce power consumption"
+    },
+    "correct": "C",
+    "section": "Electrical",
+    "difficulty": "medium-high"
+  },
+  "q98": {
+    "question": "The reciprocity theorem applies to which type of networks?",
+    "options": {
+      "A": "Active networks only",
+      "B": "Passive bilateral networks",
+      "C": "Non-linear networks",
+      "D": "Time-varying networks"
+    },
+    "correct": "B",
+    "section": "Electrical",
+    "difficulty": "high"
+  },
+  "q99": {
+    "question": "In error control coding, the main difference between ARQ and FEC is:",
+    "options": {
+      "A": "ARQ uses retransmission, FEC corrects errors without retransmission",
+      "B": "FEC uses retransmission, ARQ does not",
+      "C": "Both use the same technique",
+      "D": "ARQ is only for wireless, FEC for wired"
+    },
+    "correct": "A",
+    "section": "Electrical",
+    "difficulty": "high"
+  },
+  "q100": {
+    "question": "The Fourier transform of a rectangular pulse in time domain results in what function in frequency domain?",
+    "options": {
+      "A": "Rectangular function",
+      "B": "Sinc function",
+      "C": "Exponential function",
+      "D": "Delta function"
+    },
+    "correct": "B",
+    "section": "Electrical",
+    "difficulty": "high"
+  }
+}

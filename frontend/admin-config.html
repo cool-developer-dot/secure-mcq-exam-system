@@ -1,0 +1,565 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exam Configuration - Admin Panel</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .config-container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            overflow: hidden;
+        }
+
+        .config-header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 30px;
+            text-align: center;
+        }
+
+        .config-header h1 {
+            font-size: 2.2rem;
+            margin-bottom: 10px;
+        }
+
+        .config-header p {
+            opacity: 0.9;
+            font-size: 1.05rem;
+        }
+
+        .nav-links {
+            background: #f8fafc;
+            padding: 15px 30px;
+            border-bottom: 1px solid #e2e8f0;
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .nav-link {
+            padding: 8px 16px;
+            background: white;
+            color: #667eea;
+            text-decoration: none;
+            border-radius: 6px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border: 2px solid #667eea;
+        }
+
+        .nav-link:hover {
+            background: #667eea;
+            color: white;
+        }
+
+        .config-content {
+            padding: 40px;
+        }
+
+        .form-section {
+            margin-bottom: 35px;
+        }
+
+        .form-section h2 {
+            color: #1e293b;
+            font-size: 1.4rem;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #e2e8f0;
+        }
+
+        .form-group {
+            margin-bottom: 25px;
+        }
+
+        .form-group label {
+            display: block;
+            color: #1e293b;
+            font-weight: 600;
+            margin-bottom: 8px;
+            font-size: 1rem;
+        }
+
+        .form-group input[type="text"],
+        .form-group input[type="datetime-local"],
+        .form-group input[type="number"] {
+            width: 100%;
+            padding: 12px 15px;
+            border: 2px solid #e2e8f0;
+            border-radius: 8px;
+            font-size: 1rem;
+            transition: border-color 0.3s ease;
+        }
+
+        .form-group input:focus {
+            outline: none;
+            border-color: #667eea;
+        }
+
+        .form-group small {
+            display: block;
+            color: #64748b;
+            margin-top: 5px;
+            font-size: 0.9rem;
+        }
+
+        .toggle-switch {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .switch {
+            position: relative;
+            display: inline-block;
+            width: 60px;
+            height: 34px;
+        }
+
+        .switch input {
+            opacity: 0;
+            width: 0;
+            height: 0;
+        }
+
+        .slider {
+            position: absolute;
+            cursor: pointer;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: #ccc;
+            transition: .4s;
+            border-radius: 34px;
+        }
+
+        .slider:before {
+            position: absolute;
+            content: "";
+            height: 26px;
+            width: 26px;
+            left: 4px;
+            bottom: 4px;
+            background-color: white;
+            transition: .4s;
+            border-radius: 50%;
+        }
+
+        input:checked + .slider {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+
+        input:checked + .slider:before {
+            transform: translateX(26px);
+        }
+
+        .quick-actions {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+            margin-top: 15px;
+        }
+
+        .quick-btn {
+            padding: 8px 16px;
+            background: #f1f5f9;
+            border: 2px solid #e2e8f0;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+            font-weight: 600;
+            color: #475569;
+        }
+
+        .quick-btn:hover {
+            background: #e2e8f0;
+            border-color: #cbd5e1;
+        }
+
+        .save-btn {
+            width: 100%;
+            padding: 16px;
+            background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+            color: white;
+            border: none;
+            border-radius: 10px;
+            font-size: 1.1rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin-top: 20px;
+        }
+
+        .save-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(16, 185, 129, 0.3);
+        }
+
+        .alert {
+            padding: 15px 20px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            display: none;
+        }
+
+        .alert.success {
+            background: #d1fae5;
+            border: 1px solid #6ee7b7;
+            color: #065f46;
+        }
+
+        .alert.error {
+            background: #fee2e2;
+            border: 1px solid #fca5a5;
+            color: #991b1b;
+        }
+
+        .alert.info {
+            background: #dbeafe;
+            border: 2px solid #3b82f6;
+            color: #1e40af;
+            font-weight: 600;
+        }
+
+        .current-config {
+            background: #f8fafc;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+        }
+
+        .current-config h3 {
+            color: #667eea;
+            margin-bottom: 15px;
+        }
+
+        .config-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 10px 0;
+            border-bottom: 1px solid #e2e8f0;
+        }
+
+        .config-item:last-child {
+            border-bottom: none;
+        }
+
+        .config-label {
+            color: #64748b;
+            font-weight: 500;
+        }
+
+        .config-value {
+            color: #1e293b;
+            font-weight: 600;
+        }
+
+        .status-badge {
+            padding: 4px 12px;
+            border-radius: 12px;
+            font-size: 0.85rem;
+            font-weight: 600;
+        }
+
+        .status-badge.active {
+            background: #d1fae5;
+            color: #065f46;
+        }
+
+        .status-badge.inactive {
+            background: #fee2e2;
+            color: #991b1b;
+        }
+
+        @media (max-width: 768px) {
+            .config-content {
+                padding: 25px;
+            }
+
+            .config-header h1 {
+                font-size: 1.8rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="config-container">
+        <div class="config-header">
+            <h1>⚙️ Exam Configuration</h1>
+            <p>Set exam availability and time window</p>
+        </div>
+
+        <div class="nav-links">
+            <a href="admin.html" class="nav-link">📊 View Results</a>
+            <a href="admin-config.html" class="nav-link" style="background: #667eea; color: white;">⚙️ Configuration</a>
+            <a href="index.html" class="nav-link">📝 Student Exam</a>
+        </div>
+
+        <div class="config-content">
+            <div id="alertBox" class="alert"></div>
+
+            <!-- Current Configuration -->
+            <div class="current-config">
+                <h3>📋 Current Configuration</h3>
+                <div class="config-item">
+                    <span class="config-label">Exam Status:</span>
+                    <span class="config-value" id="currentStatus">Loading...</span>
+                </div>
+                <div class="config-item">
+                    <span class="config-label">Start Time:</span>
+                    <span class="config-value" id="currentStartTime">Not set</span>
+                </div>
+                <div class="config-item">
+                    <span class="config-label">End Time:</span>
+                    <span class="config-value" id="currentEndTime">Not set</span>
+                </div>
+                <div class="config-item">
+                    <span class="config-label">Exam Duration:</span>
+                    <span class="config-value" id="currentDuration">30 minutes</span>
+                </div>
+            </div>
+
+            <!-- Configuration Form -->
+            <form id="configForm">
+                <div class="form-section">
+                    <h2>🎯 Exam Availability</h2>
+                    
+                    <div class="form-group">
+                        <label>Exam Title</label>
+                        <input type="text" id="examTitle" placeholder="MCQ Professional Examination">
+                        <small>Optional: Custom title for the exam</small>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Enable Exam</label>
+                        <div class="toggle-switch">
+                            <label class="switch">
+                                <input type="checkbox" id="examAvailable" checked>
+                                <span class="slider"></span>
+                            </label>
+                            <span style="font-size: 0.95rem; color: #64748b;">Turn on to make exam available to students</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-section">
+                    <h2>⏰ Time Window (45 minutes availability)</h2>
+                    <p style="color: #64748b; margin-bottom: 20px; line-height: 1.6;">
+                        Set a 45-minute window during which students can <strong>start</strong> the exam. 
+                        Once started, they have 30 minutes to complete it, even if the window closes.
+                    </p>
+
+                    <div class="form-group">
+                        <label>Start Time</label>
+                        <input type="datetime-local" id="examStartTime">
+                        <small>When students can begin starting the exam</small>
+                    </div>
+
+                    <div class="form-group">
+                        <label>End Time (Auto-calculated: Start + 45 mins)</label>
+                        <input type="datetime-local" id="examEndTime" readonly style="background: #f1f5f9;">
+                        <small>Last moment students can start the exam</small>
+                    </div>
+
+                    <div class="quick-actions">
+                        <button type="button" class="quick-btn" onclick="setTimeNow()">🕐 Start Now</button>
+                        <button type="button" class="quick-btn" onclick="setTime30MinutesLater()">⏰ Start in 30 min</button>
+                        <button type="button" class="quick-btn" onclick="setTime1HourLater()">🕐 Start in 1 hour</button>
+                        <button type="button" class="quick-btn" onclick="clearTimes()">❌ Clear Times</button>
+                    </div>
+                </div>
+
+                <button type="submit" class="save-btn">💾 Save Configuration</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="config.js"></script>
+    <script>
+        const API_BASE_URL = window.__ENV?.API_BASE_URL || 'http://localhost:3000';
+
+        // Utility Functions (Global Scope)
+        function formatDateTimeLocal(date) {
+            const year = date.getFullYear();
+            const month = String(date.getMonth() + 1).padStart(2, '0');
+            const day = String(date.getDate()).padStart(2, '0');
+            const hours = String(date.getHours()).padStart(2, '0');
+            const minutes = String(date.getMinutes()).padStart(2, '0');
+            return `${year}-${month}-${day}T${hours}:${minutes}`;
+        }
+
+        function showAlert(message, type) {
+            const alertBox = document.getElementById('alertBox');
+            alertBox.className = `alert ${type}`;
+            alertBox.textContent = message;
+            alertBox.style.display = 'block';
+            
+            setTimeout(() => {
+                alertBox.style.display = 'none';
+            }, 5000);
+        }
+
+        // Quick Action Functions (Global Scope for onclick handlers)
+        function setTimeNow() {
+            const now = new Date();
+            const end = new Date(now.getTime() + 45 * 60000); // 45 minutes later
+            document.getElementById('examStartTime').value = formatDateTimeLocal(now);
+            document.getElementById('examEndTime').value = formatDateTimeLocal(end);
+            showAlert('Time set to start now for 45 minutes', 'info');
+        }
+
+        function setTime30MinutesLater() {
+            const start = new Date(Date.now() + 30 * 60000); // 30 minutes from now
+            const end = new Date(start.getTime() + 45 * 60000); // 45 minutes after start
+            document.getElementById('examStartTime').value = formatDateTimeLocal(start);
+            document.getElementById('examEndTime').value = formatDateTimeLocal(end);
+            showAlert('Time set to start in 30 minutes', 'info');
+        }
+
+        function setTime1HourLater() {
+            const start = new Date(Date.now() + 60 * 60000); // 1 hour from now
+            const end = new Date(start.getTime() + 45 * 60000); // 45 minutes after start
+            document.getElementById('examStartTime').value = formatDateTimeLocal(start);
+            document.getElementById('examEndTime').value = formatDateTimeLocal(end);
+            showAlert('Time set to start in 1 hour', 'info');
+        }
+
+        function clearTimes() {
+            document.getElementById('examStartTime').value = '';
+            document.getElementById('examEndTime').value = '';
+            showAlert('Time window cleared', 'info');
+        }
+
+        // Load current configuration on page load
+        window.addEventListener('DOMContentLoaded', loadCurrentConfig);
+
+        // Auto-calculate end time when start time changes
+        document.getElementById('examStartTime').addEventListener('change', function() {
+            if (this.value) {
+                const startTime = new Date(this.value);
+                const endTime = new Date(startTime.getTime() + 45 * 60000); // Add 45 minutes
+                document.getElementById('examEndTime').value = formatDateTimeLocal(endTime);
+            }
+        });
+
+        async function loadCurrentConfig() {
+            try {
+                const response = await fetch(`${API_BASE_URL}/config`);
+                const config = await response.json();
+
+                // Update current configuration display
+                document.getElementById('currentStatus').innerHTML = 
+                    `<span class="status-badge ${config.examAvailable ? 'active' : 'inactive'}">
+                        ${config.examAvailable ? 'Active' : 'Inactive'}
+                    </span>`;
+                
+                document.getElementById('currentStartTime').textContent = 
+                    config.examStartTime ? new Date(config.examStartTime).toLocaleString() : 'Not set';
+                
+                document.getElementById('currentEndTime').textContent = 
+                    config.examEndTime ? new Date(config.examEndTime).toLocaleString() : 'Not set';
+                
+                document.getElementById('currentDuration').textContent = 
+                    `${config.examDuration || 30} minutes`;
+
+                // Populate form with current values
+                document.getElementById('examTitle').value = config.examTitle || '';
+                document.getElementById('examAvailable').checked = config.examAvailable;
+                
+                if (config.examStartTime) {
+                    document.getElementById('examStartTime').value = formatDateTimeLocal(new Date(config.examStartTime));
+                }
+                if (config.examEndTime) {
+                    document.getElementById('examEndTime').value = formatDateTimeLocal(new Date(config.examEndTime));
+                }
+
+            } catch (error) {
+                console.error('Error loading config:', error);
+                showAlert('Failed to load current configuration', 'error');
+            }
+        }
+
+        document.getElementById('configForm').addEventListener('submit', async function(e) {
+            e.preventDefault();
+
+            const examTitle = document.getElementById('examTitle').value.trim();
+            const examAvailable = document.getElementById('examAvailable').checked;
+            const examStartTime = document.getElementById('examStartTime').value;
+            const examEndTime = document.getElementById('examEndTime').value;
+
+            // Validation
+            if (examStartTime && !examEndTime) {
+                showAlert('Please set both start and end times, or leave both empty', 'error');
+                return;
+            }
+
+            if (examStartTime && examEndTime) {
+                const start = new Date(examStartTime);
+                const end = new Date(examEndTime);
+                
+                if (end <= start) {
+                    showAlert('End time must be after start time', 'error');
+                    return;
+                }
+
+                const diffMinutes = (end - start) / 60000;
+                if (diffMinutes < 30) {
+                    showAlert('Time window should be at least 30 minutes', 'error');
+                    return;
+                }
+            }
+
+            try {
+                const response = await fetch(`${API_BASE_URL}/config`, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({
+                        examTitle: examTitle || 'MCQ Professional Examination',
+                        examAvailable,
+                        examStartTime: examStartTime ? new Date(examStartTime).toISOString() : null,
+                        examEndTime: examEndTime ? new Date(examEndTime).toISOString() : null
+                    })
+                });
+
+                if (!response.ok) {
+                    throw new Error('Failed to save configuration');
+                }
+
+                const result = await response.json();
+                showAlert('✅ Configuration saved successfully!', 'success');
+                
+                // Reload current config
+                setTimeout(() => {
+                    loadCurrentConfig();
+                }, 1000);
+
+            } catch (error) {
+                console.error('Error saving config:', error);
+                showAlert('Failed to save configuration. Please try again.', 'error');
+            }
+        });
+    </script>
+</body>
+</html>
+

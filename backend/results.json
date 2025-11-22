@@ -1,0 +1,88 @@
+[
+  {
+    "studentName": "ftt",
+    "score": 1.5,
+    "correct": 2,
+    "wrong": 1,
+    "skipped": 97,
+    "sections": {
+      "GK": {
+        "correct": 0,
+        "wrong": 0,
+        "skipped": 30,
+        "score": 0
+      },
+      "Mathematics": {
+        "correct": 2,
+        "wrong": 1,
+        "skipped": 17,
+        "score": 1.5
+      },
+      "Electrical": {
+        "correct": 0,
+        "wrong": 0,
+        "skipped": 50,
+        "score": 0
+      }
+    },
+    "timestamp": "2025-11-22T09:57:57.790Z"
+  },
+  {
+    "studentName": "Muhammad Faran",
+    "score": 0,
+    "correct": 0,
+    "wrong": 0,
+    "skipped": 100,
+    "sections": {
+      "GK": {
+        "correct": 0,
+        "wrong": 0,
+        "skipped": 30,
+        "score": 0
+      },
+      "Mathematics": {
+        "correct": 0,
+        "wrong": 0,
+        "skipped": 20,
+        "score": 0
+      },
+      "Electrical": {
+        "correct": 0,
+        "wrong": 0,
+        "skipped": 50,
+        "score": 0
+      }
+    },
+    "timestamp": "2025-11-22T10:09:53.657Z"
+  },
+  {
+    "studentName": "Muhammad Faran",
+    "fatherName": "kkkk",
+    "cnic": "33333-3333333-3",
+    "score": 0,
+    "correct": 0,
+    "wrong": 0,
+    "skipped": 100,
+    "sections": {
+      "GK": {
+        "correct": 0,
+        "wrong": 0,
+        "skipped": 30,
+        "score": 0
+      },
+      "Mathematics": {
+        "correct": 0,
+        "wrong": 0,
+        "skipped": 20,
+        "score": 0
+      },
+      "Electrical": {
+        "correct": 0,
+        "wrong": 0,
+        "skipped": 50,
+        "score": 0
+      }
+    },
+    "timestamp": "2025-11-22T10:19:36.305Z"
+  }
+]

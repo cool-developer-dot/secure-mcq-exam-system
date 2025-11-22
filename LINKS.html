@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MCQ Exam System - Quick Links</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            overflow: hidden;
+        }
+
+        .header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 40px;
+            text-align: center;
+        }
+
+        .header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+
+        .header p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+
+        .content {
+            padding: 40px;
+        }
+
+        .section {
+            margin-bottom: 40px;
+        }
+
+        .section h2 {
+            color: #667eea;
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 3px solid #667eea;
+        }
+
+        .link-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .link-card {
+            background: linear-gradient(135deg, rgba(102, 126, 234, 0.1) 0%, rgba(118, 75, 162, 0.1) 100%);
+            border: 2px solid rgba(102, 126, 234, 0.3);
+            border-radius: 12px;
+            padding: 25px;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: block;
+            color: inherit;
+        }
+
+        .link-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(102, 126, 234, 0.3);
+            border-color: #667eea;
+        }
+
+        .link-card h3 {
+            color: #667eea;
+            font-size: 1.4rem;
+            margin-bottom: 10px;
+        }
+
+        .link-card p {
+            color: #64748b;
+            margin-bottom: 15px;
+            line-height: 1.6;
+        }
+
+        .link-url {
+            background: #f1f5f9;
+            padding: 10px 15px;
+            border-radius: 6px;
+            font-family: 'Courier New', monospace;
+            font-size: 0.9rem;
+            color: #475569;
+            word-break: break-all;
+            margin-top: 10px;
+        }
+
+        .icon {
+            font-size: 2rem;
+            margin-bottom: 10px;
+            display: block;
+        }
+
+        .status-check {
+            background: #d1fae5;
+            border: 2px solid #6ee7b7;
+            color: #065f46;
+            padding: 15px 20px;
+            border-radius: 10px;
+            margin-bottom: 30px;
+            text-align: center;
+            font-weight: 600;
+        }
+
+        .api-link {
+            background: rgba(16, 185, 129, 0.1);
+            border-color: rgba(16, 185, 129, 0.3);
+        }
+
+        .api-link h3 {
+            color: #10b981;
+        }
+
+        .api-link:hover {
+            border-color: #10b981;
+        }
+
+        .warning-box {
+            background: #fef3c7;
+            border: 2px solid #fcd34d;
+            color: #92400e;
+            padding: 15px 20px;
+            border-radius: 10px;
+            margin-top: 30px;
+        }
+
+        .warning-box strong {
+            display: block;
+            margin-bottom: 10px;
+            font-size: 1.1rem;
+        }
+
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 1.8rem;
+            }
+
+            .link-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🔗 MCQ Exam System</h1>
+            <p>Quick Access Links - All Pages & APIs</p>
+        </div>
+
+        <div class="content">
+            <div class="status-check">
+                ✅ Backend Server Status: 
+                <a href="http://localhost:3000/health" target="_blank" style="color: #065f46; text-decoration: underline;">
+                    Check Now
+                </a>
+            </div>
+
+            <!-- Student Section -->
+            <div class="section">
+                <h2>🎓 For Students</h2>
+                <div class="link-grid">
+                    <a href="frontend/index.html" class="link-card" target="_blank">
+                        <span class="icon">📝</span>
+                        <h3>Student Exam Page</h3>
+                        <p>Main exam interface for students to take the 100-question MCQ exam with 30-minute timer.</p>
+                        <div class="link-url">frontend/index.html</div>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Admin Section -->
+            <div class="section">
+                <h2>👨‍💼 For Administrators</h2>
+                <div class="link-grid">
+                    <a href="frontend/admin.html" class="link-card" target="_blank">
+                        <span class="icon">📊</span>
+                        <h3>Admin Results Dashboard</h3>
+                        <p>View all exam results, scores, violations, and student details. Search and filter functionality included.</p>
+                        <div class="link-url">frontend/admin.html</div>
+                    </a>
+
+                    <a href="frontend/admin-config.html" class="link-card" target="_blank">
+                        <span class="icon">⚙️</span>
+                        <h3>Exam Configuration</h3>
+                        <p>Set 45-minute availability window, enable/disable exam, and control when students can start.</p>
+                        <div class="link-url">frontend/admin-config.html</div>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Backend Section -->
+            <div class="section">
+                <h2>🖥️ Backend Server & APIs</h2>
+                <div class="link-grid">
+                    <a href="http://localhost:3000" class="link-card api-link" target="_blank">
+                        <span class="icon">📖</span>
+                        <h3>API Documentation</h3>
+                        <p>View complete API documentation and server information.</p>
+                        <div class="link-url">http://localhost:3000</div>
+                    </a>
+
+                    <a href="http://localhost:3000/health" class="link-card api-link" target="_blank">
+                        <span class="icon">💚</span>
+                        <h3>Health Check</h3>
+                        <p>Check if backend server is running properly.</p>
+                        <div class="link-url">http://localhost:3000/health</div>
+                    </a>
+
+                    <a href="http://localhost:3000/availability" class="link-card api-link" target="_blank">
+                        <span class="icon">🕐</span>
+                        <h3>Exam Availability</h3>
+                        <p>Check if exam is currently available for students to start.</p>
+                        <div class="link-url">http://localhost:3000/availability</div>
+                    </a>
+
+                    <a href="http://localhost:3000/results" class="link-card api-link" target="_blank">
+                        <span class="icon">📋</span>
+                        <h3>All Results (JSON)</h3>
+                        <p>View all exam results in JSON format. Admin only.</p>
+                        <div class="link-url">http://localhost:3000/results</div>
+                    </a>
+
+                    <a href="http://localhost:3000/config" class="link-card api-link" target="_blank">
+                        <span class="icon">🔧</span>
+                        <h3>Configuration (JSON)</h3>
+                        <p>View current exam configuration settings in JSON format.</p>
+                        <div class="link-url">http://localhost:3000/config</div>
+                    </a>
+
+                    <a href="http://localhost:3000/exam" class="link-card api-link" target="_blank">
+                        <span class="icon">❓</span>
+                        <h3>Exam Questions (JSON)</h3>
+                        <p>View all questions (sanitized - no correct answers shown).</p>
+                        <div class="link-url">http://localhost:3000/exam</div>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Important Note -->
+            <div class="warning-box">
+                <strong>⚠️ Important:</strong>
+                <p>Make sure the backend server is running before accessing any pages.</p>
+                <p>Start server: Open PowerShell → <code>cd backend</code> → <code>npm start</code></p>
+                <p>Server should run on: <strong>http://localhost:3000</strong></p>
+            </div>
+
+            <!-- Documentation -->
+            <div class="section">
+                <h2>📖 Documentation</h2>
+                <div class="link-grid">
+                    <a href="SYSTEM_LINKS.md" class="link-card" target="_blank">
+                        <span class="icon">📄</span>
+                        <h3>System Links Reference</h3>
+                        <p>Complete guide with all links, file paths, and API endpoints.</p>
+                    </a>
+
+                    <a href="README.md" class="link-card" target="_blank">
+                        <span class="icon">📘</span>
+                        <h3>Complete Documentation</h3>
+                        <p>Full system documentation with features and usage guide.</p>
+                    </a>
+
+                    <a href="QUICK_START.md" class="link-card" target="_blank">
+                        <span class="icon">🚀</span>
+                        <h3>Quick Start Guide</h3>
+                        <p>Get started quickly with step-by-step instructions.</p>
+                    </a>
+
+                    <a href="ANTI_CHEATING.md" class="link-card" target="_blank">
+                        <span class="icon">🛡️</span>
+                        <h3>Anti-Cheating Guide</h3>
+                        <p>Complete guide to all anti-cheating features and measures.</p>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+

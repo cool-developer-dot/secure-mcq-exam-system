@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MCQ Exam System</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Welcome Screen -->
+    <div id="welcomeScreen" class="welcome-screen">
+        <div class="welcome-container">
+            <div class="exam-header">
+                <h1>📝 MCQ Examination System</h1>
+                <p class="subtitle">Professional Assessment Platform</p>
+            </div>
+            
+            <!-- Availability Status -->
+            <div id="availabilityStatus" class="availability-status" style="display: none;">
+                <div class="status-content" id="statusContent"></div>
+            </div>
+
+            <div class="exam-info-card">
+                <h2>Exam Instructions</h2>
+                <ul class="instructions">
+                    <li>✓ Total Questions: <strong>100 MCQs</strong></li>
+                    <li>✓ Time Duration: <strong>30 Minutes</strong></li>
+                    <li>✓ Marking Scheme: <strong>+1 for correct, -0.5 for wrong, 0 for skipped</strong></li>
+                    <li>✓ Questions cover General Knowledge, Mathematics, and Electrical Engineering</li>
+                    <li>✓ Once submitted, you cannot change your answers</li>
+                    <li>✓ Exam will auto-submit when timer reaches 00:00</li>
+                </ul>
+            </div>
+
+            <div class="student-form">
+                <div class="form-group-exam">
+                    <label for="studentName">Candidate Full Name *</label>
+                    <input 
+                        type="text" 
+                        id="studentName" 
+                        placeholder="Enter your full name" 
+                        required
+                        autocomplete="name">
+                </div>
+
+                <div class="form-group-exam">
+                    <label for="fatherName">Father's Name *</label>
+                    <input 
+                        type="text" 
+                        id="fatherName" 
+                        placeholder="Enter father's name" 
+                        required
+                        autocomplete="off">
+                </div>
+
+                <div class="form-group-exam">
+                    <label for="cnic">CNIC Number *</label>
+                    <input 
+                        type="text" 
+                        id="cnic" 
+                        placeholder="12345-1234567-1" 
+                        maxlength="15"
+                        required
+                        autocomplete="off">
+                    <small class="field-hint">Format: 12345-1234567-1 (13 digits)</small>
+                </div>
+
+                <p class="error-message" id="nameError"></p>
+                <button class="start-btn" id="startExamBtn">Start Exam</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Exam Screen -->
+    <div id="examScreen" class="exam-screen hidden">
+        <!-- Header with Timer -->
+        <div class="exam-navbar">
+            <div class="navbar-content">
+                <div class="student-info">
+                    <span class="label">Student:</span>
+                    <span id="displayStudentName" class="value"></span>
+                </div>
+                <div class="timer-container">
+                    <span class="timer-label">Time Remaining:</span>
+                    <span id="timer" class="timer">30:00</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Progress Bar -->
+        <div class="progress-bar-container">
+            <div class="progress-bar" id="progressBar"></div>
+            <div class="progress-text" id="progressText">0/100 Answered</div>
+        </div>
+
+        <!-- Exam Instructions -->
+        <div class="exam-instructions">
+            <div class="instructions-content">
+                <h3>📋 Important Instructions</h3>
+                <ul>
+                    <li><strong>Total Questions:</strong> 100 Multiple Choice Questions</li>
+                    <li><strong>Time Limit:</strong> 30 Minutes (Timer is running above)</li>
+                    <li><strong>Scoring:</strong> +1 for correct answer, -0.5 for wrong answer, 0 for skipped</li>
+                    <li><strong>Selection:</strong> Click on any option (A, B, C, or D) to select your answer</li>
+                    <li><strong>Navigation:</strong> You can scroll through all questions and answer in any order</li>
+                    <li><strong>Submission:</strong> Click "Submit Exam" when finished, or exam will auto-submit at 00:00</li>
+                    <li><strong>Warning:</strong> Once submitted, answers cannot be changed</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Questions Container -->
+        <div class="questions-container" id="questionsContainer">
+            <!-- Questions will be dynamically loaded here -->
+        </div>
+
+        <!-- Submit Button -->
+        <div class="submit-container">
+            <button class="submit-btn" id="submitExamBtn">Submit Exam</button>
+        </div>
+    </div>
+
+    <!-- Results Screen -->
+    <div id="resultsScreen" class="results-screen hidden">
+        <div class="results-container">
+            <div class="results-header">
+                <h1>🎉 Exam Completed!</h1>
+                <p class="student-result-name" id="resultStudentName"></p>
+            </div>
+
+            <div class="score-card">
+                <div class="main-score">
+                    <h2>Total Score</h2>
+                    <div class="score-value" id="totalScore">0</div>
+                    <p class="score-label">out of 100</p>
+                </div>
+            </div>
+
+            <div class="stats-grid">
+                <div class="stat-card correct">
+                    <div class="stat-icon">✓</div>
+                    <div class="stat-value" id="correctCount">0</div>
+                    <div class="stat-label">Correct</div>
+                </div>
+                <div class="stat-card wrong">
+                    <div class="stat-icon">✗</div>
+                    <div class="stat-value" id="wrongCount">0</div>
+                    <div class="stat-label">Wrong</div>
+                </div>
+                <div class="stat-card skipped">
+                    <div class="stat-icon">○</div>
+                    <div class="stat-value" id="skippedCount">0</div>
+                    <div class="stat-label">Skipped</div>
+                </div>
+            </div>
+
+            <div class="section-results">
+                <h3>Section-wise Performance</h3>
+                <div class="section-grid">
+                    <div class="section-card">
+                        <h4>Section 1</h4>
+                        <div class="section-score" id="section1Score">0</div>
+                        <div class="section-details">
+                            <span class="detail">✓ <span id="section1Correct">0</span></span>
+                            <span class="detail">✗ <span id="section1Wrong">0</span></span>
+                            <span class="detail">○ <span id="section1Skipped">0</span></span>
+                        </div>
+                    </div>
+                    <div class="section-card">
+                        <h4>Section 2</h4>
+                        <div class="section-score" id="section2Score">0</div>
+                        <div class="section-details">
+                            <span class="detail">✓ <span id="section2Correct">0</span></span>
+                            <span class="detail">✗ <span id="section2Wrong">0</span></span>
+                            <span class="detail">○ <span id="section2Skipped">0</span></span>
+                        </div>
+                    </div>
+                    <div class="section-card">
+                        <h4>Section 3</h4>
+                        <div class="section-score" id="section3Score">0</div>
+                        <div class="section-details">
+                            <span class="detail">✓ <span id="section3Correct">0</span></span>
+                            <span class="detail">✗ <span id="section3Wrong">0</span></span>
+                            <span class="detail">○ <span id="section3Skipped">0</span></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <button class="new-exam-btn" onclick="location.reload()">Start New Exam</button>
+        </div>
+    </div>
+
+    <!-- Loading Overlay -->
+    <div id="loadingOverlay" class="loading-overlay hidden">
+        <div class="spinner"></div>
+        <p>Loading questions...</p>
+    </div>
+
+    <!-- Anti-Cheating: Watermark -->
+    <div id="examWatermark" class="exam-watermark"></div>
+
+    <!-- Anti-Cheating: Tab Switch Warning -->
+    <div id="tabWarning" class="tab-warning">
+        <h1>⚠️ WARNING</h1>
+        <p>You have switched tabs or minimized the exam window!</p>
+        <p>This action has been recorded.</p>
+        <div class="warning-count">
+            Violations: <span id="violationCount">0</span>
+        </div>
+        <p style="margin-top: 30px; font-size: 1.2rem;">Click anywhere to return to exam</p>
+    </div>
+
+    <!-- Anti-Cheating: Screenshot Blocker -->
+    <div id="screenshotBlocker" class="screenshot-blocker">
+        🚫 SCREENSHOT BLOCKED
+    </div>
+
+    <script src="config.js"></script>
+    <script src="exam.js"></script>
+</body>
+</html>

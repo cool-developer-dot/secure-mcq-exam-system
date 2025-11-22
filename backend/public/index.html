@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MCQ Exam System - API Server</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            max-width: 900px;
+            margin: 50px auto;
+            padding: 20px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+        .container {
+            background: white;
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+        }
+        h1 {
+            color: #667eea;
+            text-align: center;
+            margin-bottom: 10px;
+        }
+        .subtitle {
+            text-align: center;
+            color: #666;
+            margin-bottom: 40px;
+        }
+        .status {
+            background: #d4edda;
+            color: #155724;
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+            border-left: 5px solid #28a745;
+        }
+        .endpoint {
+            background: #f8f9fa;
+            padding: 20px;
+            margin: 15px 0;
+            border-radius: 8px;
+            border-left: 4px solid #667eea;
+        }
+        .endpoint h3 {
+            margin-top: 0;
+            color: #667eea;
+        }
+        .method {
+            display: inline-block;
+            padding: 3px 8px;
+            border-radius: 4px;
+            font-weight: bold;
+            font-size: 12px;
+            margin-right: 10px;
+        }
+        .method.get {
+            background: #28a745;
+            color: white;
+        }
+        .method.post {
+            background: #007bff;
+            color: white;
+        }
+        code {
+            background: #f4f4f4;
+            padding: 2px 6px;
+            border-radius: 3px;
+            font-family: 'Courier New', monospace;
+        }
+        .info-box {
+            background: #fff3cd;
+            border-left: 4px solid #ffc107;
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 5px;
+        }
+        .test-links {
+            margin-top: 30px;
+            text-align: center;
+        }
+        .btn {
+            display: inline-block;
+            padding: 10px 20px;
+            margin: 5px;
+            background: #667eea;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background 0.3s;
+        }
+        .btn:hover {
+            background: #764ba2;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🎓 MCQ Exam System API</h1>
+        <p class="subtitle">Backend Server is Running Successfully</p>
+        
+        <div class="status">
+            <strong>✅ Server Status:</strong> Active and Running<br>
+            <strong>🌐 Port:</strong> 3000<br>
+            <strong>📍 URL:</strong> http://localhost:3000
+        </div>
+
+        <h2>📡 Available API Endpoints</h2>
+
+        <div class="endpoint">
+            <h3><span class="method get">GET</span>/health</h3>
+            <p>Health check endpoint to verify server is running.</p>
+            <p><strong>Response:</strong> <code>{"status":"OK","message":"Server is running"}</code></p>
+        </div>
+
+        <div class="endpoint">
+            <h3><span class="method get">GET</span>/questions</h3>
+            <p>Fetch all 100 MCQ questions for the exam (sanitized - no correct answers exposed).</p>
+            <p><strong>Returns:</strong> Questions with options only</p>
+            <p><strong>Security:</strong> Correct answers, sections, and difficulty levels are NOT included</p>
+        </div>
+
+        <div class="endpoint">
+            <h3><span class="method post">POST</span>/submit</h3>
+            <p>Submit student answers and receive calculated results.</p>
+            <p><strong>Request Body:</strong></p>
+            <pre><code>{
+  "studentName": "John Doe",
+  "answers": {
+    "q1": "A",
+    "q2": "C",
+    ...
+  }
+}</code></pre>
+            <p><strong>Response:</strong> Score, correct/wrong counts, and section-wise statistics (without revealing section names)</p>
+        </div>
+
+        <div class="endpoint">
+            <h3><span class="method get">GET</span>/results</h3>
+            <p>Admin endpoint to view all submitted exam results.</p>
+            <p><strong>Returns:</strong> Array of all student results with timestamps</p>
+        </div>
+
+        <div class="info-box">
+            <strong>🔒 Security Features:</strong>
+            <ul style="margin: 10px 0;">
+                <li>Correct answers are never exposed to frontend</li>
+                <li>Section identifiers are masked (section1, section2, section3)</li>
+                <li>Difficulty levels are backend-only</li>
+                <li>CORS enabled for cross-origin requests</li>
+            </ul>
+        </div>
+
+        <div class="info-box">
+            <strong>📊 Scoring System:</strong>
+            <ul style="margin: 10px 0;">
+                <li>✅ Correct answer: +1 mark</li>
+                <li>❌ Wrong answer: -0.5 marks</li>
+                <li>⊗ Skipped question: 0 marks</li>
+            </ul>
+        </div>
+
+        <div class="test-links">
+            <h3>Quick Test Links</h3>
+            <a href="/health" class="btn" target="_blank">Test Health Check</a>
+            <a href="/questions" class="btn" target="_blank">View Questions</a>
+            <a href="/results" class="btn" target="_blank">View Results (Admin)</a>
+        </div>
+    </div>
+</body>
+</html>
+
