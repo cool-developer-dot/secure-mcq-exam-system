@@ -1,10 +1,13 @@
 /**
  * Frontend configuration file.
- * 
- * Edit window.__ENV.API_BASE_URL to point to your deployed backend API.
- * When hosted on the same domain as the backend, leave it undefined and it
- * will automatically use window.location.origin.
+ *
+ * Set API_BASE_URL to your deployed backend. If you're serving the frontend
+ * and backend from the same domain, you can delete this assignment and the
+ * fallback logic below will auto-detect the origin.
  */
+window.__ENV = window.__ENV || {};
+window.__ENV.API_BASE_URL = 'https://secure-mcq-exam-system.onrender.com';
+
 (function () {
   var DEFAULT_LOCAL_API = 'http://localhost:3000';
 
