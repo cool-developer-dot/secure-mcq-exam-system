@@ -228,9 +228,11 @@ app.post('/submit', async (req, res) => {
       const section = questionData.section;
 
       if (!studentAnswer || studentAnswer.trim() === '') {
-        // Skipped question
+        // Skipped question: -1 mark
         skippedCount++;
+        totalScore -= 1;
         sectionStats[section].skipped++;
+        sectionStats[section].score -= 1;
       } else if (studentAnswer === correctAnswer) {
         // Correct answer: +1 mark
         correctCount++;
@@ -238,11 +240,11 @@ app.post('/submit', async (req, res) => {
         sectionStats[section].correct++;
         sectionStats[section].score += 1;
       } else {
-        // Wrong answer: -0.5 marks
+        // Wrong answer: -1.25 marks
         wrongCount++;
-        totalScore -= 0.5;
+        totalScore -= 1.25;
         sectionStats[section].wrong++;
-        sectionStats[section].score -= 0.5;
+        sectionStats[section].score -= 1.25;
       }
     }
 
