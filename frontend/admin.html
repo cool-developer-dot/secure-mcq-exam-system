@@ -168,6 +168,32 @@
             font-weight: 600;
         }
 
+        .delete-btn {
+            padding: 8px 16px;
+            border-radius: 6px;
+            border: none;
+            cursor: pointer;
+            font-weight: 600;
+            background: #ef4444;
+            color: #fff;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .delete-btn:hover {
+            transform: translateY(-1px);
+            box-shadow: 0 5px 15px rgba(239, 68, 68, 0.4);
+        }
+
+        .info-banner {
+            background: #e0f2fe;
+            border-left: 4px solid #0ea5e9;
+            padding: 12px 15px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            color: #0f172a;
+            font-size: 0.95rem;
+        }
+
         .section-scores {
             display: flex;
             gap: 10px;
@@ -300,6 +326,9 @@
                 <button class="refresh-btn" onclick="location.href='admin-config.html'">⚙️ Config</button>
                 <button class="refresh-btn" onclick="loadResults()">🔄 Refresh</button>
             </div>
+            <div class="info-banner">
+                <strong>Data retention:</strong> Only the latest 7 submissions are kept automatically. Use the&nbsp;Delete button to remove a record manually.
+            </div>
         </div>
 
         <div id="errorContainer"></div>
@@ -325,6 +354,7 @@
                         <th>Section 2</th>
                         <th>Section 3</th>
                         <th>Timestamp</th>
+                        <th>Actions</th>
                     </tr>
                 </thead>
                 <tbody id="resultsTableBody">
@@ -389,7 +419,7 @@
                 loadingContainer.style.display = 'none';
                 errorContainer.innerHTML = `
                     <div class="error-message">
-                        <strong>Error:</strong> ${error.message}. Please make sure the backend server is running on port 3000.
+                        <strong>Error:</strong> ${error.message}. Please verify the backend at ${API_BASE_URL} is reachable.
                     </div>
                 `;
             }
@@ -456,9 +486,41 @@
                 <td><span class="section-badge">${result.sections?.Mathematics?.score?.toFixed(1) || '0'}</span></td>
                 <td><span class="section-badge">${result.sections?.Electrical?.score?.toFixed(1) || '0'}</span></td>
                 <td class="timestamp">${formattedDate}</td>
+                <td>
+                    <button class="delete-btn" onclick="deleteResult('${result.id || ''}')">Delete</button>
+                </td>
             `;
 
             return tr;
+        }
+
+        async function deleteResult(id) {
+            if (!id) return;
+            const confirmDelete = confirm('Are you sure you want to delete this result? This action cannot be undone.');
+            if (!confirmDelete) return;
+
+            const errorContainer = document.getElementById('errorContainer');
+            errorContainer.innerHTML = '';
+
+            try {
+                const response = await fetch(`${API_BASE_URL}/results/${id}`, {
+                    method: 'DELETE'
+                });
+
+                if (!response.ok) {
+                    const payload = await response.json().catch(() => ({}));
+                    throw new Error(payload.error || 'Failed to delete result');
+                }
+
+                await loadResults();
+            } catch (error) {
+                console.error('Error deleting result:', error);
+                errorContainer.innerHTML = `
+                    <div class="error-message">
+                        <strong>Error:</strong> ${error.message}
+                    </div>
+                `;
+            }
         }
 
         function updateStats(results) {

@@ -22,9 +22,11 @@ const express = require('express');
 const cors = require('cors');
 const fs = require('fs').promises;
 const path = require('path');
+const { randomUUID } = require('crypto');
 
 const app = express();
 const PORT = process.env.PORT || 3000;
+const MAX_RESULTS = 7;
 
 // Middleware
 app.use(cors());
@@ -62,7 +64,21 @@ function getDefaultConfig() {
 async function loadResults() {
   try {
     const data = await fs.readFile(RESULTS_FILE, 'utf8');
-    return JSON.parse(data);
+    const parsed = JSON.parse(data);
+    let mutated = false;
+    const normalized = parsed.map((result) => {
+      if (!result.id) {
+        mutated = true;
+        return { ...result, id: randomUUID() };
+      }
+      return result;
+    });
+
+    if (mutated) {
+      await saveResults(normalized);
+    }
+
+    return normalized;
   } catch (error) {
     // If file doesn't exist, return empty array
     if (error.code === 'ENOENT') {
@@ -202,6 +218,7 @@ app.post('/submit', async (req, res) => {
 
     // Create result record (to be saved in results.json)
     const resultRecord = {
+      id: randomUUID(),
       studentName: sanitizedName,
       fatherName: sanitizedFatherName,
       cnic: sanitizedCNIC,
@@ -241,6 +258,9 @@ app.post('/submit', async (req, res) => {
     // Load existing results and append new result
     const allResults = await loadResults();
     allResults.push(resultRecord);
+    while (allResults.length > MAX_RESULTS) {
+      allResults.shift();
+    }
     await saveResults(allResults);
 
     // SECURITY: Response to frontend WITHOUT section names to prevent exposure
@@ -286,6 +306,31 @@ app.get('/results', async (req, res) => {
     res.json(results);
   } catch (error) {
     console.error('Error in /results:', error);
+    res.status(500).json({ error: 'Internal server error' });
+  }
+});
+
+// DELETE /results/:id - Remove a result (Admin)
+app.delete('/results/:id', async (req, res) => {
+  try {
+    const { id } = req.params;
+    if (!id) {
+      return res.status(400).json({ error: 'Result id is required' });
+    }
+
+    const allResults = await loadResults();
+    const index = allResults.findIndex((result) => result.id === id);
+
+    if (index === -1) {
+      return res.status(404).json({ error: 'Result not found' });
+    }
+
+    allResults.splice(index, 1);
+    await saveResults(allResults);
+
+    res.json({ success: true });
+  } catch (error) {
+    console.error('Error deleting result:', error);
     res.status(500).json({ error: 'Internal server error' });
   }
 });

@@ -40,6 +40,9 @@ A professional, secure, and full-featured Multiple Choice Question (MCQ) examina
   - Search functionality
   - Statistics (Total exams, Average score, Highest score)
   - Auto-refresh capability
+- 🗂️ **Result retention controls**
+  - Only the most recent 7 submissions are stored automatically
+  - Delete any record manually from the admin dashboard
 - ⚙️ **Exam Configuration** (`admin-config.html`) **NEW!**
   - Set 45-minute availability window
   - Control when students can start exam
@@ -195,6 +198,16 @@ Returns all submitted exam results
 ]
 ```
 
+#### `DELETE /results/:id`
+Delete a specific result (Admin only)
+
+**Response:**
+```json
+{
+  "success": true
+}
+```
+
 #### `GET /health`
 Health check endpoint
 
@@ -317,6 +330,8 @@ Results are automatically saved in `backend/results.json` with:
 - Correct/Wrong/Skipped counts
 - Section-wise breakdown (with actual section names for admin)
 - Timestamp
+- Only the **latest 7** submissions are retained automatically to keep storage tidy
+- Administrators can delete individual submissions via the dashboard
 
 ## 🛠️ Technologies Used
 
