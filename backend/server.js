@@ -28,9 +28,9 @@ const app = express();
 const PORT = process.env.PORT || 3000;
 const MAX_RESULTS = 7;
 const REGISTERED_CNICS = new Set([
-  '3650213768123',
+  '3650213768124',
   '3640102167887',
-  '3333333333333'
+  '3333333333334'
 ]);
 
 // Middleware
@@ -139,7 +139,7 @@ async function saveConfig(config) {
 // POST /submit - Submit student answers and calculate score
 app.post('/submit', async (req, res) => {
   try {
-    const { studentName, fatherName, cnic, answers, antiCheatLog } = req.body;
+    const { studentName, fatherName, cnic, answers, antiCheatLog, autoSubmitted } = req.body;
 
     // SECURITY: Strict input validation
     if (!studentName || typeof studentName !== 'string' || studentName.trim() === '') {
@@ -252,6 +252,7 @@ app.post('/submit', async (req, res) => {
       studentName: sanitizedName,
       fatherName: sanitizedFatherName,
       cnic: sanitizedCNIC,
+      autoSubmitted: Boolean(autoSubmitted),
       score: totalScore,
       correct: correctCount,
       wrong: wrongCount,

@@ -423,18 +423,7 @@ async function submitExam() {
     showLoading(true);
     
     try {
-        const payload = {
-            studentName: examState.studentName,
-            fatherName: examState.fatherName,
-            cnic: examState.cnic,
-            answers: examState.answers,
-            antiCheatLog: {
-                violations: antiCheat.violations,
-                tabSwitchCount: antiCheat.tabSwitchCount,
-                screenshotAttempts: antiCheat.screenshotAttempts,
-                rightClickAttempts: antiCheat.rightClickAttempts
-            }
-        };
+        const payload = createSubmitPayload(false);
         
         const response = await fetch(`${API_BASE_URL}/submit`, {
             method: 'POST',
@@ -465,6 +454,23 @@ async function submitExam() {
     } finally {
         showLoading(false);
     }
+}
+
+// Build submit payload (shared between manual submit and auto-submit)
+function createSubmitPayload(autoSubmitted = false) {
+    return {
+        studentName: examState.studentName,
+        fatherName: examState.fatherName,
+        cnic: examState.cnic,
+        answers: examState.answers,
+        antiCheatLog: {
+            violations: antiCheat.violations,
+            tabSwitchCount: antiCheat.tabSwitchCount,
+            screenshotAttempts: antiCheat.screenshotAttempts,
+            rightClickAttempts: antiCheat.rightClickAttempts
+        },
+        autoSubmitted
+    };
 }
 
 // Display Results
@@ -769,3 +775,32 @@ setInterval(() => {
 }, 1000);
 
 console.log('Anti-cheating system initialized');
+
+// Auto-submit on page hide / close if exam started but not submitted
+async function autoSubmitOnExit() {
+    try {
+        if (!examState.isExamStarted || examState.isExamSubmitted) {
+            return;
+        }
+
+        const payload = createSubmitPayload(true);
+
+        await fetch(`${API_BASE_URL}/submit`, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(payload),
+            keepalive: true
+        });
+
+        examState.isExamSubmitted = true;
+    } catch (error) {
+        // We can't reliably report errors during unload; best-effort only.
+        console.error('Auto-submit on exit failed:', error);
+    }
+}
+
+window.addEventListener('pagehide', () => {
+    autoSubmitOnExit();
+});
