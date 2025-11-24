@@ -27,6 +27,11 @@ const { randomUUID } = require('crypto');
 const app = express();
 const PORT = process.env.PORT || 3000;
 const MAX_RESULTS = 7;
+const REGISTERED_CNICS = new Set([
+  '3650213768123',
+  '3640102167887',
+  '3333333333333'
+]);
 
 // Middleware
 app.use(cors());
@@ -99,6 +104,11 @@ async function saveResults(results) {
   }
 }
 
+function normalizeCnicDigits(cnic) {
+  if (!cnic || typeof cnic !== 'string') return '';
+  return cnic.replace(/[^0-9]/g, '');
+}
+
 // Helper function to load exam configuration
 async function loadConfig() {
   try {
@@ -158,9 +168,29 @@ app.post('/submit', async (req, res) => {
     }
 
     // Validate CNIC format (13 digits with dashes)
-    const cnicDigits = sanitizedCNIC.replace(/-/g, '');
+    const cnicDigits = normalizeCnicDigits(sanitizedCNIC);
     if (!/^\d{13}$/.test(cnicDigits)) {
       return res.status(400).json({ error: 'Invalid CNIC format. Must be 13 digits' });
+    }
+
+    // Check CNIC registration
+    if (!REGISTERED_CNICS.has(cnicDigits)) {
+      return res.status(403).json({
+        error: 'Your CNIC is not registered for this exam. Please contact the administrator.'
+      });
+    }
+
+    // Ensure CNIC has not already taken the exam
+    const existingResults = await loadResults();
+    const alreadyAttempted = existingResults.some((result) => {
+      const existingDigits = normalizeCnicDigits(result.cnic);
+      return existingDigits === cnicDigits;
+    });
+
+    if (alreadyAttempted) {
+      return res.status(403).json({
+        error: 'This CNIC has already attempted the exam. Each registered student can only attempt once.'
+      });
     }
 
     if (!answers || typeof answers !== 'object' || Array.isArray(answers)) {
@@ -422,6 +452,47 @@ app.get('/availability', async (req, res) => {
     });
   } catch (error) {
     console.error('Error in /availability:', error);
+    res.status(500).json({ error: 'Internal server error' });
+  }
+});
+
+// POST /eligibility - Check if a CNIC is allowed to start the exam
+app.post('/eligibility', async (req, res) => {
+  try {
+    const { cnic } = req.body || {};
+
+    if (!cnic || typeof cnic !== 'string' || cnic.trim() === '') {
+      return res.status(400).json({ error: 'CNIC is required' });
+    }
+
+    const sanitizedCNIC = cnic.trim().replace(/[^0-9-]/g, '').substring(0, 15);
+    const cnicDigits = normalizeCnicDigits(sanitizedCNIC);
+
+    if (!/^\d{13}$/.test(cnicDigits)) {
+      return res.status(400).json({ error: 'Invalid CNIC format. Must be 13 digits' });
+    }
+
+    if (!REGISTERED_CNICS.has(cnicDigits)) {
+      return res.status(403).json({
+        error: 'Your CNIC is not registered for this exam. Please contact the administrator.'
+      });
+    }
+
+    const existingResults = await loadResults();
+    const alreadyAttempted = existingResults.some((result) => {
+      const existingDigits = normalizeCnicDigits(result.cnic);
+      return existingDigits === cnicDigits;
+    });
+
+    if (alreadyAttempted) {
+      return res.status(403).json({
+        error: 'This CNIC has already attempted the exam. Each registered student can only attempt once.'
+      });
+    }
+
+    res.json({ eligible: true });
+  } catch (error) {
+    console.error('Error in /eligibility:', error);
     res.status(500).json({ error: 'Internal server error' });
   }
 });

@@ -183,6 +183,31 @@ async function startExam() {
         console.error('Error checking availability:', error);
         // Continue anyway if availability check fails (fallback)
     }
+
+    // Check CNIC eligibility (registered and not used before)
+    try {
+        const eligibilityResponse = await fetch(`${API_BASE_URL}/eligibility`, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({ cnic })
+        });
+
+        if (!eligibilityResponse.ok) {
+            const data = await eligibilityResponse.json().catch(() => ({}));
+            const message = data.error || 'You are not eligible to take this exam.';
+            showLoading(false);
+            showError(message);
+            alert(`⚠️ ${message}`);
+            return;
+        }
+    } catch (error) {
+        console.error('Error checking eligibility:', error);
+        showLoading(false);
+        showError('Unable to verify exam eligibility. Please try again in a moment.');
+        return;
+    }
     
     examState.studentName = name;
     examState.fatherName = fatherName;
