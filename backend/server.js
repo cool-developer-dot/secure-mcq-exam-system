@@ -29,7 +29,7 @@ const PORT = process.env.PORT || 3000;
 const MAX_RESULTS = 7;
 const REGISTERED_CNICS = new Set([
   '3650213768124',
-  '3640102167887',
+  '36401-0216788-7',
   '3333333333334'
 ]);
 
